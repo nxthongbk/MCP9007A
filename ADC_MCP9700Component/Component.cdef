@@ -1,0 +1,17 @@
+sources:
+{
+	ADC_MCP9700Component.cpp
+	util/font8.c
+	util/font12.c
+	util/font16.c
+	util/font20.c
+	util/font24.c
+	util/paint.cpp
+}
+requires:
+{
+    api:
+    {
+        le_adc.api
+    }
+}

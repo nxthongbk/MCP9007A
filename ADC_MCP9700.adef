@@ -1,0 +1,35 @@
+executables:
+{
+	adc_mcp9700 = ( ADC_MCP9700Component )
+}
+
+processes:
+{
+	envVars:
+	{
+		LE_LOG_LEVEL = DEBUG
+	}
+
+	run:
+	{
+		( adc_mcp9700 )
+	}
+
+	maxCoreDumpFileBytes: 512K
+	maxFileBytes: 512K
+}
+requires:
+{
+    device:
+	{		
+        [rw]    /dev/fb0  /dev/fb0 // Get read and write access to the UART1 port.
+	}
+}
+bindings:
+{
+	adc_mcp9700.ADC_MCP9700Component.le_adc -> modemService.le_adc
+}
+
+
+version: 1.0.0
+maxFileSystemBytes: 512K
